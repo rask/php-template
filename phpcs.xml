@@ -95,7 +95,11 @@
     <!-- `[...] = foo()` instead of `list(...) = foo()`. -->
     <rule ref="SlevomatCodingStandard.PHP.ShortList" />
 
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true" />
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash" />
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
