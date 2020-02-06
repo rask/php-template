@@ -42,10 +42,20 @@
     },
 
     "scripts": {
+        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-update-cmd": "cghooks update",
         "test": "./vendor/bin/phpunit",
         "stan": "./vendor/bin/phpstan analyze -l 7 ./src",
-        "lint": ["@php -l .", " ./vendor/bin/phpcs ."],
+        "lint": "./vendor/bin/phpcs .",
         "fix": "./vendor/bin/phpcbf .",
         "infection": "./vendor/bin/infection"
+    },
+
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "composer lint"
+            ]
+        }
     }
 }
