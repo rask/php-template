@@ -6,3 +6,4 @@
 /phpcs.xml export-ignore
 /phpstan.neon export-ignore
 /.editorconfig export-ignore
+/Makefile export-ignore
