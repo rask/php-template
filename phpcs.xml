@@ -62,6 +62,8 @@
         <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn" />
         <exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />
         <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParamNameNoMatch" />
+        <exclude name="Squiz.Commenting.FunctionComment.IncorrectTypeHint" />
 
         <!-- Sometimes useless, e.g. `int` is okay and this tries to force `integer`. -->
         <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />
