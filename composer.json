@@ -23,7 +23,7 @@
     },
 
     "require": {
-        "php": ">=8.0",
+        "php": "^8.2",
         "roave/security-advisories": "dev-master"
     },
 
@@ -31,12 +31,12 @@
         "ext-xdebug": "*",
         "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "^9.0",
-        "phpstan/phpstan": "^0.12",
-        "phpstan/phpstan-strict-rules": "^0.12",
-        "ergebnis/phpstan-rules": "^0.15",
-        "infection/infection": "^0.20",
-        "squizlabs/php_codesniffer": "^3.5",
-        "slevomat/coding-standard": "^6.0",
+        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan-strict-rules": "^1.4",
+        "ergebnis/phpstan-rules": "^1.0",
+        "infection/infection": "^0.26",
+        "squizlabs/php_codesniffer": "^3.7",
+        "slevomat/coding-standard": "^8.0",
         "brainmaestro/composer-git-hooks": "^2.8",
         "rask/coding-standard": "^0.1"
     },
@@ -45,7 +45,7 @@
         "post-install-cmd": "cghooks add --ignore-lock",
         "post-update-cmd": "cghooks update",
         "test": "./vendor/bin/phpunit",
-        "stan": "./vendor/bin/phpstan analyze -l 7 ./src",
+        "stan": "./vendor/bin/phpstan analyze -l max ./src",
         "lint": "./vendor/bin/phpcs .",
         "fix": "./vendor/bin/phpcbf .",
         "infection": "./vendor/bin/infection"
@@ -56,6 +56,13 @@
             "pre-commit": [
                 "composer lint"
             ]
+        }
+    },
+
+    "config": {
+        "allow-plugins": {
+            "infection/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }

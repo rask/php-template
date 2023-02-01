@@ -2,7 +2,7 @@
 <ruleset name="" namespace="">
     <description>Coding standard for this PHP project</description>
 
-    <php_version>7.4</php_version>
+    <php_version>8.2</php_version>
 
     <!-- Generic excludes. -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
@@ -85,7 +85,21 @@
     </rule>
 
     <!-- Make docblock typing redundant if declaration itself uses types. -->
-    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <properties>
+            <property name="enableEachParameterAndReturnInspection" value="true" />
+            <property name="allAnnotationsAreUseful" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <properties>
+            <property name="enableEachParameterAndReturnInspection" value="true" />
+            <property name="allAnnotationsAreUseful" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
             <property name="enableEachParameterAndReturnInspection" value="true" />
             <property name="allAnnotationsAreUseful" value="true" />
@@ -103,6 +117,10 @@
 
     <!-- `[...] = foo()` instead of `list(...) = foo()`. -->
     <rule ref="SlevomatCodingStandard.PHP.ShortList" />
+
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceBeforeDeclare"/>
+    </rule>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>

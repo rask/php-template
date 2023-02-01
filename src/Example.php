@@ -5,7 +5,7 @@ namespace Vendor\Package;
 /**
  * Class Example
  */
-class Example
+final class Example
 {
     /**
      * Hellos the world, maybe.
