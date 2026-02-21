@@ -2,9 +2,6 @@
 
 namespace Vendor\Package;
 
-/**
- * Class Example
- */
 final class Example
 {
     /**

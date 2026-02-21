@@ -23,18 +23,17 @@
     },
 
     "require": {
-        "php": "^8.3",
+        "php": "^8.5",
         "roave/security-advisories": "dev-master"
     },
 
     "require-dev": {
         "ext-xdebug": "*",
         "roave/security-advisories": "dev-master",
-        "phpunit/phpunit": "^9.0",
-        "phpstan/phpstan": "^1.9",
-        "phpstan/phpstan-strict-rules": "^1.4",
-        "ergebnis/phpstan-rules": "^1.0",
-        "infection/infection": "^0.26",
+        "phpunit/phpunit": "^13.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "ergebnis/phpstan-rules": "^2.0",
         "squizlabs/php_codesniffer": "^3.7",
         "slevomat/coding-standard": "^8.0",
         "brainmaestro/composer-git-hooks": "^2.8",
@@ -44,11 +43,10 @@
     "scripts": {
         "post-install-cmd": "cghooks add --ignore-lock",
         "post-update-cmd": "cghooks update",
-        "test": "./vendor/bin/phpunit",
+        "test": "@php -dxdebug.mode=coverage ./vendor/bin/phpunit",
         "stan": "./vendor/bin/phpstan analyze -l max ./src",
         "lint": "./vendor/bin/phpcs .",
-        "fix": "./vendor/bin/phpcbf .",
-        "infection": "./vendor/bin/infection"
+        "fix": "./vendor/bin/phpcbf ."
     },
 
     "extra": {
@@ -61,7 +59,6 @@
 
     "config": {
         "allow-plugins": {
-            "infection/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }

@@ -10,10 +10,13 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <source>
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory>./src</directory>
         </include>
+    </source>
+
+    <coverage pathCoverage="true">
         <report>
             <text outputFile="php://stdout" showOnlySummary="true" />
             <html outputDirectory="./tests/reports/coverage" highLowerBound="80" />
